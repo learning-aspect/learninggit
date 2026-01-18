@@ -16,7 +16,7 @@ jobs:
       Greeting: Hello
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: "checking context variable- metadata"
+      - name: "checking context variable-metadata"
         run: | 
           echo "Repository name : ${{github.repository}}"
           echo "workflow name : ${{github.workflow}}"
