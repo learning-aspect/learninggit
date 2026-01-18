@@ -21,5 +21,3 @@ jobs:
           echo "Repository name : ${{github.repository}}"
           echo "workflow name : ${{github.workflow}}"
           echo "Triggered by : ${{github.triggering_actor}}"
-        env: 
-          FirstName: Parul
