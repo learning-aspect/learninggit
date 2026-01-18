@@ -20,7 +20,7 @@ jobs:
     steps:
      # Runs a single command using the runners shell
       - name: Run a workflow on configuration variable
-        run: echo "$Greeting $FirstName is using $cloud with projet ${{var.project_id}}"
+        run: echo "$Greeting $FirstName is using $cloud with projet ${{vars.project_id}}"
         env:
           FirstName: Parul
 
