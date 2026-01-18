@@ -1,0 +1,26 @@
+# This is a workflow for demonstrating context variables in Github Actions
+
+name: Testing context variable
+
+on:
+  workflow_dispatch:
+    inputs:
+      number1:
+        description: "First Number"
+        default: '0'
+        required: true
+      number2:
+        description: "Second Number"
+        default: '0'
+        required: true
+        
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  add_two_numbers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Adding two numbers"
+        id: sum
+        run: echo "::set-output name=sum::${{${{ inputs.number1}} + ${{ inputs.number2}}}}"
+      - name: "Display Sum"
+        run: echo "The sum of ${{ inputs.number1}} and ${{ inputs.number2}} is ${{ steps.sum.outputs.sum}}"
