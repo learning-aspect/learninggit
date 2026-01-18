@@ -1,0 +1,19 @@
+# This is a workflow for demonstrating context variables in Github Actions
+
+name: Testing context variable
+
+on:
+  workflow_dispatch
+env:
+  cloud: AWS
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  test_context_variable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checking context variable-metadata"
+        run: | 
+          echo "Repository name : ${{github.repository}}"
+          echo "workflow name : ${{github.workflow}}"
+          echo "Triggered by : ${{github.triggering_actor}}"
