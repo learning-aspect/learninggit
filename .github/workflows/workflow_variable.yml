@@ -24,12 +24,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       Greeting: Hello
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: "Say Hello, Its variable workflow"
-          run: echo "$Greeting $FirstName is using $cloud"
-          env: 
-            FirstName: Parul
-
-          echo test, and deploy your project.
+        run: echo "$Greeting $FirstName is using $cloud"
+        env: 
+          FirstName: Parul
